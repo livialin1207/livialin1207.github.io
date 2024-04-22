@@ -1,0 +1,333 @@
+html{
+    font-size: 62.5%;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+/* 導覽列 header */
+.header{
+    background-color: gainsboro;
+    padding:1.5rem 0;
+    position: relative;
+}
+
+.container{
+    max-width: 1920px;
+    margin: auto;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* 社群link */
+.header .nav ul{
+    display: flex;
+    gap: 2em;
+}
+
+
+.header .nav ul li a{
+    display: inline-block;
+    font-size: 2rem;
+    padding:1em 1.1em;
+    border-radius: 100px;
+    background-color: #c8dfc2;
+    color: #005e66;
+    text-transform: capitalize;
+    transition: all 0.5s ease;
+}
+
+.header .nav ul li a:hover{
+    color:#ffffff;
+}
+
+.header #nav-check{
+    position: absolute;
+    opacity:0;
+    pointer-events: none;
+}
+
+.nav-toggler{
+    height: 34px;
+    width: 44px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.nav-toggler span{
+    display: block;
+    height: 2px;
+    width: 20px;
+    background-color: #005e66;
+    position: relative;
+}
+   
+.nav-toggler span::before,
+.nav-toggler span::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #005e66;
+    left:0;
+}
+   
+.nav-toggler span::before{
+    top: -6px;
+}
+
+.nav-toggler span::after{
+    top: 6px;
+}
+
+/* 手機版nav */
+@media only screen and (max-width:768px) {
+    .header{height: 7rem;}
+    .header .container{
+        padding-left: 1rem;
+        padding-right: 1rem;}
+ }
+
+@media(max-width: 991px){
+.logo img{
+    width: 40%;} 
+
+.nav-toggler{
+    display: flex;}
+
+.header .nav{
+    position: absolute;
+    left:0;
+    top:100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #dcdfde;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    opacity:0;
+    visibility: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header .nav ul li{
+    display: block;
+    margin:0;}
+    
+.header #nav-check:checked ~ .nav{
+    opacity: 1;
+    visibility: visible;}
+       
+/* .header #nav-check:focus ~ .nav-toggler{
+    box-shadow: 0 0 15px #000000;}*/
+
+.header #nav-check:checked ~ .nav-toggler span{
+    background-color: transparent;} 
+       
+.header #nav-check:checked ~ .nav-toggler span::before{
+    top:0;
+    transform: rotate(45deg);}
+
+.header #nav-check:checked ~ .nav-toggler span::after{
+    top:0;
+    transform: rotate(-45deg);}
+   }
+
+
+/* banner */
+.hero{
+    background-image: url(/image/logo-banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* 透明度 0.6 的黑色半透明遮罩 */
+    background-color: rgba(0, 0, 0, .4);
+    /* 設置背景混和模式為相乘模式 */
+    background-blend-mode: multiply;
+    background-position: center;
+    /* 設定背景圖高度(避免用height) */
+    padding-top: 30em;
+    padding-bottom: 30em; 
+}
+
+.banner-container{
+    max-width: 1310px;
+    margin: auto;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+h1{
+    font-size: 3.6rem;
+    margin-bottom: 1em;
+}
+
+.banner-container .tag{
+    font-size: 2rem;
+}
+
+/* banner 手機版設定 */
+@media only screen and (max-width:768px) {
+    .banner-container{margin-left: 2.2em;}
+ }
+
+ /* 段落一 */
+ .section1 .wrap{
+    display: flex;
+    flex-direction: row;
+    max-width: 1440px;
+    margin: auto;
+    padding: 12em 5em;
+    align-items: center;
+ }
+
+  /* 段落一 雙欄占比*/
+ .text-block-l{
+    flex: 3;
+ }
+
+ .text-block-r{
+    flex: 2;
+ }
+
+ .text-block-l p{
+    font-size: 2rem;
+    margin-bottom: 1.2em;
+}
+
+.text-block-l .quote{
+    font-size: 3.2rem;
+}
+
+.text-block-r p{
+    font-size: 2rem;
+    line-height: 2em;
+}
+
+ /* 段落二 */
+.section2{
+    background-color: #f0f2d8;
+}
+.section2 .wrap{
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: auto;
+    padding: 12em 5em;
+ }
+
+ .section2 .text-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em; /* 設定文字和圖片間距 */
+ }
+
+
+.section2 h2{
+    font-size: 2.9rem;
+    margin-bottom: 2em;
+}
+
+.section2 p{
+    font-size: 1.6rem;
+    line-height: 1.5em;
+}
+
+.section2 .img-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; /* 設定容器寬度為父容器寬度 */
+    overflow: hidden; /* 隱藏溢出内容 */
+    flex-wrap: nowrap; /* 禁止换行 */
+ }
+
+ .img-wrapper{
+    flex: 1; /* 平分父容器寬度 */
+    max-height: 400px; /* 設定圖片容器的最大高度 */
+ }
+
+ .img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 使用 cover 填充容器，並保持圖片寬高比 */
+ }
+
+  /* 段落三 */
+  .section3 .wrap{
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: auto;
+    padding: 12em 5em;
+ }
+
+ .section3 h2{
+    font-size: 2.9rem;
+    margin-bottom: 2em;
+}
+
+.section3 .text-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+ }
+
+ .section3 .text-block span{
+    font-size: 3.5rem;
+    background-color: #c8dfc2;
+    color: #005e66;
+    border-radius: 100px;
+    padding: 8px 20px;
+    margin-right: 20px;
+ }
+
+ .section3 p{
+    font-size: 1.6rem;
+    line-height: 1.5em;
+}
+
+/* footer */
+footer{
+    background-color: #dcdfde;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+footer .wrap{
+    max-width: 1440px;
+    margin: auto;
+    text-align: center;
+}
